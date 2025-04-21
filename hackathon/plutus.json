@@ -1,0 +1,152 @@
+{
+  "preamble": {
+    "title": "long/hackathon",
+    "description": "Aiken contracts for project 'long/hackathon'",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.0+be31a7c"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "contribute.contribute.spend",
+      "datum": {
+        "title": "datum_opt",
+        "schema": {
+          "$ref": "#/definitions/contribute~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/contribute~1Action"
+        }
+      },
+      "compiledCode": "59027c0101003232323232323225333002323232323253330073370e900118041baa0011323232323232533300d300300115333010300f37540102a0042c2a66601a66e1d200200115333010300f37540102a0042c2c601a6ea801c54ccc02cc004c030dd50010991919191919192999809180418099baa0011323232533301500615333015300b301637540202944400452819911919800800991980080080591299980e0008a5eb804c8c94ccc06ccdd79806980e9baa3009301d375400400e26603e004660080080022660080080026040004603c00244a66603600229404c94ccc064c94ccc068cdc3a400860366ea80044c94ccc06cc044c070dd5000899191919191929998121813801099baf300e375c602660466ea801c03058dd6981280098128011bae30230013023002375c6042002603a6ea800458c07cc070dd50008a50301e301f301f301b3754600e60366ea8c078008528899801801800980f0009803180b1baa3002301637546032602c6ea800cc004dd71803180b1baa0092300433018300433018375200297ae0330184c0103d87a80004bd701180c180c8008b191980080080291299980b0008a6103d87a80001323253330153375e600e602e6ea80080344c014cc0640092f5c0266008008002603400460300026e9520003322323300100100322533301600114a0264a66602866e3cdd7180c8010020a51133003003001301900137586028602a602a602a602a602a602a602a602a0066eb8c004c044dd50021180a0009bac3012001300e37540126020601a6ea800858dc3a4000601c601e004601a00260126ea800458c02cc030008c028004c028008c020004c010dd50008a4c26cacae6955ceaab9e5573eae815d0aba201",
+      "hash": "97c39792cc34adcff38b5013c274a01cefb6b3a9cd96e84a53f3fe64"
+    },
+    {
+      "title": "contribute.contribute.else",
+      "compiledCode": "59027c0101003232323232323225333002323232323253330073370e900118041baa0011323232323232533300d300300115333010300f37540102a0042c2a66601a66e1d200200115333010300f37540102a0042c2c601a6ea801c54ccc02cc004c030dd50010991919191919192999809180418099baa0011323232533301500615333015300b301637540202944400452819911919800800991980080080591299980e0008a5eb804c8c94ccc06ccdd79806980e9baa3009301d375400400e26603e004660080080022660080080026040004603c00244a66603600229404c94ccc064c94ccc068cdc3a400860366ea80044c94ccc06cc044c070dd5000899191919191929998121813801099baf300e375c602660466ea801c03058dd6981280098128011bae30230013023002375c6042002603a6ea800458c07cc070dd50008a50301e301f301f301b3754600e60366ea8c078008528899801801800980f0009803180b1baa3002301637546032602c6ea800cc004dd71803180b1baa0092300433018300433018375200297ae0330184c0103d87a80004bd701180c180c8008b191980080080291299980b0008a6103d87a80001323253330153375e600e602e6ea80080344c014cc0640092f5c0266008008002603400460300026e9520003322323300100100322533301600114a0264a66602866e3cdd7180c8010020a51133003003001301900137586028602a602a602a602a602a602a602a602a0066eb8c004c044dd50021180a0009bac3012001300e37540126020601a6ea800858dc3a4000601c601e004601a00260126ea800458c02cc030008c028004c028008c020004c010dd50008a4c26cacae6955ceaab9e5573eae815d0aba201",
+      "hash": "97c39792cc34adcff38b5013c274a01cefb6b3a9cd96e84a53f3fe64"
+    },
+    {
+      "title": "vote.vote.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/vote~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "_redeemer",
+        "schema": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "parameters": [
+        {
+          "title": "admin",
+          "schema": {
+            "$ref": "#/definitions/VerificationKeyHash"
+          }
+        }
+      ],
+      "compiledCode": "58d001010032323232323223225333004323232323253330093370e900118051baa0011323232533300c3370e900018069baa00113232533300e33001002375c602460206ea8c048c040dd50018a5113300100200c22323300100100322533301400114a0264a66602466e3cdd7180b0010020a5113300300300130160013758602060226022602260226022602260226022601c6ea801c58c03cc040008c038004c02cdd50008b1806180680118058009805801180480098031baa00114984d958dd7000ab9a5573aaae7955cfaba157441",
+      "hash": "5a11d5e73f289b259d021b43cf0103b1d9942f058b8eb777554208e0"
+    },
+    {
+      "title": "vote.vote.else",
+      "parameters": [
+        {
+          "title": "admin",
+          "schema": {
+            "$ref": "#/definitions/VerificationKeyHash"
+          }
+        }
+      ],
+      "compiledCode": "58d001010032323232323223225333004323232323253330093370e900118051baa0011323232533300c3370e900018069baa00113232533300e33001002375c602460206ea8c048c040dd50018a5113300100200c22323300100100322533301400114a0264a66602466e3cdd7180b0010020a5113300300300130160013758602060226022602260226022602260226022601c6ea801c58c03cc040008c038004c02cdd50008b1806180680118058009805801180480098031baa00114984d958dd7000ab9a5573aaae7955cfaba157441",
+      "hash": "5a11d5e73f289b259d021b43cf0103b1d9942f058b8eb777554208e0"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "Data": {
+      "title": "Data",
+      "description": "Any Plutus data."
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "VerificationKeyHash": {
+      "title": "VerificationKeyHash",
+      "dataType": "bytes"
+    },
+    "contribute/Action": {
+      "title": "Action",
+      "anyOf": [
+        {
+          "title": "Contribute",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        },
+        {
+          "title": "Refund",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        }
+      ]
+    },
+    "contribute/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "contributor",
+              "$ref": "#/definitions/VerificationKeyHash"
+            },
+            {
+              "title": "receiver",
+              "$ref": "#/definitions/VerificationKeyHash"
+            },
+            {
+              "title": "amount",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "vote/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/VerificationKeyHash"
+            },
+            {
+              "title": "vote",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
