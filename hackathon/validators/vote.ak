@@ -26,11 +26,11 @@ fn find_output_address(outputs: List<Output>, addrExport: Address) -> Bool {
   }
 }
 
-validator vote(admin: VerificationKeyHash) {
+validator vote(admin: VerificationKeyHash, name: ByteArray) {
   spend(
     datum_otp: Option<Datum>,
     redeemer: Redeemer,
-    own_ref: OutputReference,
+    _own_ref: OutputReference,
     self: Transaction,
   ) {
     expect Some(datum) = datum_otp
@@ -42,15 +42,8 @@ validator vote(admin: VerificationKeyHash) {
     let check_output_admin = find_output_address(outputs, admin_address)
     let check_output_voter = find_output_address(outputs, voter_address)
     when redeemer.actionChoice is {
-      "vote" -> {
-        let check_say = or {
-            datum.vote == "yes",
-            datum.vote == "no",
-          }
-        and {
-          signByVoter?,
-          check_say?,
-        }
+      "update"->{
+        signByVoter?
       }
       "export" -> or {
           and {
