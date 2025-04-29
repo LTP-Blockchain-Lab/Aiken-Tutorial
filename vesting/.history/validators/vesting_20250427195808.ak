@@ -4,9 +4,10 @@ use vodka_validity_range.{valid_after}
 use aiken/crypto.{VerificationKeyHash}
 
 pub type Datum {
-  owner: VerificationKeyHash,
-  beneficiary: VerificationKeyHash,
   lock_until: Int,
+  owner: VerificationKeyHash,
+  /// Beneficiary's credentials
+  beneficiary: VerificationKeyHash,
 }
 
 

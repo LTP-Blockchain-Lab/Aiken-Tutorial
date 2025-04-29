@@ -1,0 +1,47 @@
+use aiken/collection/list
+use aiken/collection/map
+
+// Function to check if any anagram of the given string can form a palindrome
+pub fn hasPalindromicAnagram(s: String) -> Bool {
+    // Create a frequency map to count occurrences of each character
+    let freq_map = map.empty<Char, Int>()
+
+    // Count each character in the string
+    for char in s {
+        let count = map.get(freq_map, char) |> option.map(fn(v) { v + 1 }) |> pick(1)
+        freq_map = map.insert(freq_map, char, count)
+    }
+
+    // Count how many characters have an odd frequency
+    let odd_count = map.foldl(freq_map, 0, fn(_, count) {
+        if count % 2 == 1 {
+            1
+        } else {
+            0
+        }
+    })
+
+    // A string can form a palindrome if there is at most one odd count
+    odd_count <= 1
+}
+
+// Test cases
+test hasPalindromicAnagram_1() {
+    hasPalindromicAnagram("civic") == True // "civic" is a palindrome
+}
+
+test hasPalindromicAnagram_2() {
+    hasPalindromicAnagram("ivicc") == True // "ivicc" can be rearranged to "civic"
+}
+
+test hasPalindromicAnagram_3() {
+    hasPalindromicAnagram("hello") == False // No anagram can form a palindrome
+}
+
+test hasPalindromicAnagram_4() {
+    hasPalindromicAnagram("AAB") == True // "AAB" can be rearranged to "ABA"
+}
+
+test hasPalindromicAnagram_5() {
+    hasPalindromicAnagram("AABb") == True // "AABb" can be rearranged to "AbAb"
+}
