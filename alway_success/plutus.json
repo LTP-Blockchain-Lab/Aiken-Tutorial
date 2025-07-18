@@ -1,0 +1,70 @@
+{
+  "preamble": {
+    "title": "thomas/alway_success",
+    "description": "Aiken contracts for project 'thomas/alway_success'",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.0+be31a7c"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "alway_success.my_script.mint",
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "compiledCode": "587001010032323232322533300232323232323253330083370e9000000899251375c601660146ea800854ccc020cdc3a40040022646464944c034c038008c030004c028dd50010b18041baa0013009300a0023008001300800230060013004375400229309b2b2b9a5573aaae795d0aba21",
+      "hash": "d67835a61f5e6555a4b28ead50a40c414817af6a588f4832b992ed4a"
+    },
+    {
+      "title": "alway_success.my_script.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/alway_success~1MyDatum"
+        }
+      },
+      "redeemer": {
+        "title": "_redeemer",
+        "schema": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "compiledCode": "587001010032323232322533300232323232323253330083370e9000000899251375c601660146ea800854ccc020cdc3a40040022646464944c034c038008c030004c028dd50010b18041baa0013009300a0023008001300800230060013004375400229309b2b2b9a5573aaae795d0aba21",
+      "hash": "d67835a61f5e6555a4b28ead50a40c414817af6a588f4832b992ed4a"
+    },
+    {
+      "title": "alway_success.my_script.else",
+      "compiledCode": "587001010032323232322533300232323232323253330083370e9000000899251375c601660146ea800854ccc020cdc3a40040022646464944c034c038008c030004c028dd50010b18041baa0013009300a0023008001300800230060013004375400229309b2b2b9a5573aaae795d0aba21",
+      "hash": "d67835a61f5e6555a4b28ead50a40c414817af6a588f4832b992ed4a"
+    }
+  ],
+  "definitions": {
+    "Data": {
+      "title": "Data",
+      "description": "Any Plutus data."
+    },
+    "alway_success/MyDatum": {
+      "title": "MyDatum",
+      "anyOf": [
+        {
+          "title": "MyDatum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "data",
+              "$ref": "#/definitions/Data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

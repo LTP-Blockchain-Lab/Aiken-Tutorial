@@ -1,0 +1,77 @@
+{
+  "preamble": {
+    "title": "long/test_cardano_c",
+    "description": "Aiken contracts for project 'long/test_cardano_c'",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.0+be31a7c"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "test_cardano_c.test_cardano_c.spend",
+      "datum": {
+        "title": "datum_otp",
+        "schema": {
+          "$ref": "#/definitions/test_cardano_c~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/test_cardano_c~1Redeemer"
+        }
+      },
+      "compiledCode": "58bb01010032323232323225333002323232323253330073370e900118041baa0011323232533300a3370e900018059baa00513232533300f30110021533300c3370e900018069baa0031323371e6eb8c044c03cdd50042441174c6f6e6720697320746865206661746865722048756e67003010300e37540062c2c6eb8c03c004c030dd50028b18069807001180600098049baa00116300a300b0023009001300900230070013004375400229309b2b2b9a5573aaae7955cfaba15745",
+      "hash": "8c743c1125239f242bccb4cb941b976ef501f72092b48fd9566394f1"
+    },
+    {
+      "title": "test_cardano_c.test_cardano_c.else",
+      "compiledCode": "58bb01010032323232323225333002323232323253330073370e900118041baa0011323232533300a3370e900018059baa00513232533300f30110021533300c3370e900018069baa0031323371e6eb8c044c03cdd50042441174c6f6e6720697320746865206661746865722048756e67003010300e37540062c2c6eb8c03c004c030dd50028b18069807001180600098049baa00116300a300b0023009001300900230070013004375400229309b2b2b9a5573aaae7955cfaba15745",
+      "hash": "8c743c1125239f242bccb4cb941b976ef501f72092b48fd9566394f1"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "test_cardano_c/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "number",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "test_cardano_c/Redeemer": {
+      "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Redeemer",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "value",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

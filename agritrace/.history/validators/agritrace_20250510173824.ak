@@ -1,0 +1,6 @@
+
+
+
+pub type Datum{
+    farmer: 
+}

@@ -1,0 +1,1 @@
+use aiken/crypto.{VerificationKeyhash}
