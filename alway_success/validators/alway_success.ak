@@ -8,7 +8,7 @@ pub type MyDatum{
     data: Data
 }
 
-validator my_script {
+validator always_success {
   mint(redeemer: Data, policy_id: PolicyId, self: Transaction) {
     True
   }
